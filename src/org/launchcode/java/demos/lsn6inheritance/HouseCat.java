@@ -8,6 +8,9 @@ public class HouseCat extends Cat {
         super(aWeight);
         name = aName;
     }
+    public HouseCat(String aName){
+        name = aName;
+    }
 
     public boolean isSatisfied() {
         return !isHungry() && !isTired();
@@ -15,7 +18,11 @@ public class HouseCat extends Cat {
 
     @Override
     public String noise() {
-        return "Hello, my name is " + name + "!";
+        if(isSatisfied()){
+            return "Hello, my name is " + name + "!";
+        } else {
+            return "Meeeeeeoooooowwwwww";
+        }
     }
 
     public String purr() {
